@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Intro from './components/Intro.jsx'; // Corrected path based on your file tab
+import Intro from './components/Intro.jsx';
+import Translator from './components/Translator.jsx';
+import Footer from './components/Footer.jsx';
 
 // --- Placeholder Components ---
 // You can move these to their own files later
@@ -23,18 +23,13 @@ const About = () => (
 // --- Main App ---
 function App() {
   return (
-    // 1. Wrap your entire application in <BrowserRouter>
-    <BrowserRouter>
-      {/* 2. Define your routes */}
-      <Routes>
-        {/* The "Intro" component will now render on the homepage "/" */}
-        <Route path="/" element={<Intro />} />
-        
-        {/* Add routes for the pages you are linking to */}
-        <Route path="/app" element={<MainApp />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Intro />
+      <div id="translator-section">
+        <Translator />
+      </div>
+      <Footer />
+    </>
   );
 }
 
